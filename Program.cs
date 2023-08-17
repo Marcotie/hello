@@ -15,6 +15,8 @@ builder.Services.AddCors(options =>
         });
 });
 var app = builder.Build();
+app.UsePathBase(new PathString("/api"));
+app.UseRouting();
 app.UseHttpLogging();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
